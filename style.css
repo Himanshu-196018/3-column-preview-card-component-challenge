@@ -3,8 +3,97 @@
   margin: 0;
   padding: 0;
 }
+:root {
+  --orange: hsl(31, 77%, 52%);
+  --cyan: hsl(184, 100%, 22%);
+  --dark-cyan: hsl(179, 100%, 13%);
+}
 
+/* setting up color classes */
+.orange {
+  background-color: var(--orange);
+}
+.cyan {
+  background-color: var(--cyan);
+}
+.dark-cyan {
+  background-color: var(--dark-cyan);
+}
+.txt-orange {
+  color: var(--orange);
+}
+.txt-cyan {
+  color: var(--cyan);
+}
+.txt-dark-cyan {
+  color: var(--dark-cyan);
+}
+
+/* style */
 body {
   min-height: 100vh;
-  text-align: center;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lexend-Deca", sans-serif;
+  font-size: 15px;
+}
+
+/* style for component */
+.component {
+  margin: 25px;
+}
+
+/* border radius (for mobile-view) */
+.card:first-child {
+  border-radius: 10px 10px 0 0;
+}
+.card:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+/* style for each cards */
+.card {
+  padding: 30px 50px;
+  max-width: 325px;
+  height: 440px;
+  display: grid;
+  align-content: space-around;
+}
+
+.logo img {
+  height: 40px;
+}
+
+/* style for headings */
+h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-family: "Big Shoulders Display", sans-serif;
+  color: hsl(0, 0%, 95%);
+}
+
+/* style for paragraph */
+p {
+  width: 200px;
+  line-height: 1.8;
+  color: hsla(0, 0%, 100%, 0.75);
+}
+
+/* style for buttons */
+.rounded-button {
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 25px;
+  background-color: hsl(0, 0%, 95%);
+
+  /*applying hover effects  */
+  &:hover {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+  }
 }
