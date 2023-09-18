@@ -33,7 +33,6 @@
 body {
   min-height: 100vh;
   display: grid;
-  align-items: center;
   justify-content: center;
   font-family: "Lexend-Deca", sans-serif;
   font-size: 15px;
@@ -41,7 +40,8 @@ body {
 
 /* style for component */
 .component {
-  margin: 25px;
+  margin: 40px 25px; /* for mobile-display */
+  align-self: center;
 }
 
 /* border radius (for mobile-view) */
@@ -54,19 +54,19 @@ body {
 
 /* style for each cards */
 .card {
-  padding: 30px 50px;
-  max-width: 325px;
+  width: 325px;
   height: 440px;
-  display: grid;
-  align-content: space-around;
+  position: relative;
 }
 
 .logo img {
+  margin: 40px 0 0 50px;
   height: 40px;
 }
 
 /* style for headings */
 h1 {
+  margin: 25px 50px;
   font-size: 40px;
   text-transform: uppercase;
   font-family: "Big Shoulders Display", sans-serif;
@@ -75,16 +75,21 @@ h1 {
 
 /* style for paragraph */
 p {
+  margin-left: 50px;
   width: 200px;
-  line-height: 1.8;
+  line-height: 1.5;
+  word-spacing: 1.6px;
   color: hsla(0, 0%, 100%, 0.75);
 }
 
 /* style for buttons */
 .rounded-button {
+  margin-left: 50px;
   width: 150px;
   height: 50px;
   border: none;
+  position: absolute;
+  bottom: 50px;
   border-radius: 25px;
   background-color: hsl(0, 0%, 95%);
 
@@ -96,4 +101,34 @@ p {
     cursor: pointer;
     transition: all 300ms ease-in-out;
   }
+}
+
+/* style for desktop/larger screens */
+@media screen and (width > 930px) {
+  .component {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  /* border radius for desktop view */
+  .card:first-child {
+    border-radius: 10px 0 0 10px;
+  }
+  .card:last-child {
+    border-radius: 0 10px 10px 0;
+  }
+
+  /* style for cards */
+  .card {
+    width: 306px;
+    height: 500px;
+  }
+}
+
+/* style for footer */
+footer {
+  margin: 10px auto;
+  font-size: 14px;
+  position: absolute;
+  align-self: flex-end;
+  justify-self: center;
 }
